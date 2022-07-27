@@ -2,6 +2,7 @@
     "name": "coderoll/xtb-api-client",
     "description": "XTB API Client",
     "type": "library",
+    "license": "MIT",
     "require": {
         "ext-json": "*"
     },
