@@ -7,6 +7,9 @@ namespace Coderoll\XtbApiClient\Payload;
  */
 class GetTrades extends AbstractPayload
 {
+    /**
+     * Constructor
+     */
     public function __construct(bool $openedOnly)
     {
         $this->arguments['openedOnly'] = $openedOnly;

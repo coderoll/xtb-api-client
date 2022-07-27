@@ -5,6 +5,9 @@
     "require": {
         "ext-json": "*"
     },
+    "require-dev": {
+        "textalk/websocket": "^1.5"
+    },
     "suggest": {
         "textalk/websocket": "^1.5"
     },
