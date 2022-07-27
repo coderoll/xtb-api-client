@@ -1,0 +1,16 @@
+{
+    "name": "coderoll/xtb-api-client",
+    "description": "XTB API Client",
+    "type": "library",
+    "require": {
+        "ext-json": "*"
+    },
+    "suggest": {
+        "textalk/websocket": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Coderoll\\XtbApiClient\\": "src/"
+        }
+    }
+}
