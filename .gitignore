@@ -1,4 +1,6 @@
 .idea
 /run.php
+/test.php
 /composer.lock
 /vendor
+/.phpunit.cache

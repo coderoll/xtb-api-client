@@ -4,10 +4,12 @@
     "type": "library",
     "license": "MIT",
     "require": {
+        "php": ">=8.0",
         "ext-json": "*"
     },
     "require-dev": {
-        "textalk/websocket": "^1.5"
+        "textalk/websocket": "^1.5",
+        "phpunit/phpunit": "^9.5"
     },
     "suggest": {
         "textalk/websocket": "^1.5"
@@ -15,6 +17,11 @@
     "autoload": {
         "psr-4": {
             "Coderoll\\XtbApiClient\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Coderoll\\XtbApiClient\\Tests\\": "tests/"
         }
     }
 }

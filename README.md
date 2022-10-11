@@ -2,12 +2,15 @@
 
 PHP library to use X-Trade Broker websocket API.
 
-*NOTE: THE LIBRARY IS NOT FINISHED!*
+*NOTE: WORK IN PROGRESS!*
 
-For now only 3 commands are available:
+For now only following commands are available:
+- Get Symbol
 - Get Trades
 - Login
 - Logout
+- Trade Transaction
+- Trade Transaction Status
 
 Also error handling is missing.
 
@@ -52,6 +55,19 @@ $client->text($getTrades);
 // var_dump of GetTrades data
 $getTradesResponse = GetTradesResponse::createFromJson($client->receive());
 var_dump($getTradesResponse->getReturnData());
+
+// TradeTransaction command
+$tradeTransInfo = new TradeTransInfo();
+$tradeTransInfo
+    ->setCmd(TradeTransInfo::CMD_BUY)
+    ->setSymbol('EURUSD')
+    ->setVolume(0.01)
+    ->setPrice(0.01) // I think it's ignored on CMD_BUY
+;
+$tradeTransaction = new TradeTransaction($tradeTransInfo);
+$client->text($tradeTransaction);
+$tradeTransactionResponse = TradeTransactionResponse::createFromJson($client->receive());
+var_dump($tradeTransactionResponse);
 
 // Logout
 $logout = new Logout();
