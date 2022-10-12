@@ -13,6 +13,12 @@ class TradeTransInfo
     public const CMD_BALANCE = 6;
     public const CMD_CREDIT = 7;
 
+    public const TYPE_OPEN = 0;
+    public const TYPE_PENDING = 1;
+    public const TYPE_CLOSE = 2;
+    public const TYPE_MODIFY = 3;
+    public const TYPE_DELETE = 4;
+
     /**
      * @var int
      */
@@ -208,7 +214,10 @@ class TradeTransInfo
     public function getArguments(): ?array
     {
         $parameters = [];
-        $parameters['cmd'] = $this->cmd;
+
+        if (isset($this->cmd)) {
+            $parameters['cmd'] = $this->cmd;
+        }
 
         if (isset($this->customComment)) {
             $parameters['customComment'] = $this->customComment;
